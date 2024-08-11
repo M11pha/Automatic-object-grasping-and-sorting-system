@@ -37,3 +37,6 @@ Verify that the kernel is updated :
 
 ## Step 2: [Install Intel® RealSense™ ROS from Sources](https://github.com/IntelRealSense/realsense-ros/tree/ros1-legacy)
 
+```
+echo "source ~/camera/devel/setup.bash" >> ~/.bashrc
+```
