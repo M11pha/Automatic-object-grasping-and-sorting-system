@@ -5,7 +5,7 @@
     + d435文件夹 测试相机
         + `roslaunch realsense2_description view_d435_model_rviz_gazebo.launch`
     + kuka_robots文件夹 测试机械臂
-        
+      
         ```bash
         sudo apt-get install ros-noetic-joint-trajectory-controller
         sudo apt-get install ros-noetic-moveit*
