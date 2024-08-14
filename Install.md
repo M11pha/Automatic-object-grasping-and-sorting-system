@@ -9,3 +9,7 @@
 
 ## Step 3: [配置机械臂](https://blog.csdn.net/lixushi/article/details/122578852)
 
+## 深度学习环境
+
++ [CUDNN测试](https://blog.csdn.net/qq_42699580/article/details/104430168)
+
