@@ -42,7 +42,8 @@ $ rosrun tf tf_echo turtle1 turtle2 # 查找两乌龟间的坐标变换关系
 $ env | grep ros # 查看所有ROS相关的环境变量
 $ echo $ROS_PACKAGE_PATH
 $ rosmsg show <msg_name> # 显示某种消息的路径和内容
-
+$ rostopic list
+$ rosservice list
 
 # 初始化工作区--------------------------------------------------------------------------------
 $ mkdir -p ~/catkin_ws/src
