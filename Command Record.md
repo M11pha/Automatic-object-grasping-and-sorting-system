@@ -1,5 +1,14 @@
 # Command Record
 
+## conda
+
+```bash
+$ source ~/anaconda3/bin/activate # 激活conda环境
+$ conda deactivate # 退出conda环境
+```
+
+
+
 ## rosdep
 
 + #### Install dependency of all packages in the workspace
@@ -14,8 +23,15 @@
 ## 小乌龟
 
 ```bash
-$ rosrun turtelsim turtlesim_node # 可视化界面
+$ rosrun turtlesim turtlesim_node # 可视化界面
 $ rosrun turtlesim turtle_teleop_key # 键盘控制
+$ rqt_graph # 计算图可视化工具
+#----------------------------------------------------------
+$ roslaunch turtle_tf turtle_tf_demo.launch # 轨迹跟踪
+$ rosrun rviz rviz -d `rospack find turtle_tf`/rviz/turtle_rviz.rviz # 坐标关系可视化
+$ rosrun tf2_tools view_frames.py # 查看例程中的TF树
+$ rosrun tf tf_echo turtle1 turtle2 # 查找两乌龟间的坐标变换关系
+
 ```
 
 
