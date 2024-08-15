@@ -6,7 +6,8 @@ $ sudo catkin_create_pkg mrobot_description urdf xacro # 创建一个新的功�
 # 检查梳理模型文件---------------------------------------------------
 $ sudo apt-get install liburdfdom-tools # 
 # check_urdf命令会解析URDF文件，并显示解析过程中的错误
-$ check_urdf mrobot_chassis.urd 
+$ check_urdf mrobot_chassis.urdf 
+$ check_urdf <(xacro model.urdf.xacro)
 ```
 
 ## 使用xacro优化URDF
@@ -30,6 +31,6 @@ $ rosrun xacro xacro.py mrobot.urdf.xacro > mrobot.urdf
 $ roslaunch mrobot_gazebo view_mrobot_with_kinect_gazebo.launch # Gazebo初始化小车场景
 $ roslaunch mrobot_teleop mrobot_teleop.launch # 小车控制
 $ rqt_image_view #　图像显示
-$ rosrun rviz rviz 
+$ rosrun rviz rviz
 ```
 
