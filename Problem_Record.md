@@ -7,6 +7,9 @@
 + 小车抖动
 + 相机未设定惯性
 + 左右轮子对调
++ `ERROR] [1723731587.809724926]: SpawnModel: Failure - model name robot already exist.`https://answers.ros.org/question/271978/error-while-launching-robot-model/
+  + 机器人加载问题，原因是删除了相机的inertial标签
+
 
 ## Moveit
 
