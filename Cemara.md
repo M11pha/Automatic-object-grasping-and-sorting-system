@@ -40,3 +40,11 @@ Verify that the kernel is updated :
 ```
 echo "source ~/camera/devel/setup.bash" >> ~/.bashrc
 ```
+
+## Camera Calibration
+
+```bash
+$ roslaunch camera_calibration camera_calibration.launch
+$ rosrun camera_calibration cameracalibrator.py --size 7x6 --square 0.01 image:=/camera/rgb/image_raw camera:=/camera/rgb # 新建终端并不要source
+```
+
