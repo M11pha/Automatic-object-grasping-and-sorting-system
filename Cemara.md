@@ -47,11 +47,20 @@ echo "source ~/camera/devel/setup.bash" >> ~/.bashrc
 # package ws_d435i 
 $ roslaunch camera_calibration camera_calibration.launch
 $ rosrun camera_calibration cameracalibrator.py --size 7x6 --square 0.01 image:=/camera/rgb/image_raw camera:=/camera/rgb # 新建终端并不要source
+
+<node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model"
+        args="-z 1.0 -unpause -urdf -model robot -param robot_description" respawn="false" output="screen" />
 ```
 
 ## Test Camera
 
 ```bash
-#
+# package ws_d435i 
+$ roslaunch realsense2_description view_d435_model_rviz_gazebo.launch align_depth:=true depth_width:=1280 depth_height:=720 depth_fps:=30 color_width:=1280 color_height:=720 color_fps:=30
+$ roslaunch mrobot_teleop mrobot_teleop.launch # 小车控制
+$ rostopic echo /camera/color/image_raw --noarr
+
 ```
 
++ 目前深度图与颜色图的配准由直接修改颜色图视角广度完成
++ 所有图的分辨率均为1280 X 720
