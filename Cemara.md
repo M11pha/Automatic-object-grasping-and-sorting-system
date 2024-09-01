@@ -56,7 +56,7 @@ $ rosrun camera_calibration cameracalibrator.py --size 7x6 --square 0.01 image:=
 
 ```bash
 # package ws_d435i 
-$ roslaunch realsense2_description view_d435_model_rviz_gazebo.launch align_depth:=true depth_width:=1280 depth_height:=720 depth_fps:=30 color_width:=1280 color_height:=720 color_fps:=30
+$ roslaunch realsense2_description view_d435_model_rviz_gazebo.launch
 $ roslaunch mrobot_teleop mrobot_teleop.launch # 小车控制
 $ rostopic echo /camera/color/image_raw --noarr
 
