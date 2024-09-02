@@ -58,6 +58,9 @@ $ rosrun camera_calibration cameracalibrator.py --size 7x6 --square 0.01 image:=
 # package ws_d435i 
 $ roslaunch realsense2_description view_d435_model_rviz_gazebo.launch
 $ roslaunch mrobot_teleop mrobot_teleop.launch # 小车控制
+# 显示目标检测结果，与预测框中心点距离（realsense2_description下脚本）
+$ python3 test.py # 结束时用ctrl+z并用kill -9 [pid]清除内存
+
 $ rostopic echo /camera/color/image_raw --noarr
 
 ```

@@ -20,6 +20,12 @@
 
 + 先使用`sudo apt install python3-rosdep2`安装rosdep，再`rosdep init`
 
+    ```bash
+    rosdep install --from-paths src --ignore-src -r -y
+    ```
+
+    
+
 + 但是该安装会卸载noetic packages，根据https://github.com/ros-infrastructure/rosdep/issues/763，再卸载rosdep，安装noetic
 
     ```bash

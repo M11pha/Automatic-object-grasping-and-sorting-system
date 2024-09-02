@@ -46,8 +46,7 @@ $ rostopic list
 $ rosservice list
 
 # 初始化工作区--------------------------------------------------------------------------------
-$ mkdir -p ~/catkin_ws/src
-$ cd ~/catkin_ws/src
+$ mkdir -p ./catkin_ws/src && cd ~/catkin_ws/src
 $ catkin_init_workspace 
 $ cd ~/catkin_ws
 $ catkin_make # 如果想重新编译，直接删除build与devel文件夹即可

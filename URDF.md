@@ -19,7 +19,8 @@ $ check_urdf <(xacro model.urdf.xacro)
 
 ```bash
 # 将xacro文件转换为URDF文件
-$ rosrun xacro xacro.py mrobot.urdf.xacro > mrobot.urdf 
+$ rosrun xacro xacro mrobot.urdf.xacro > mrobot.urdf 
+
 ```
 
 # Gazebo
