@@ -8,6 +8,9 @@ $ sudo apt-get install liburdfdom-tools #
 # check_urdf命令会解析URDF文件，并显示解析过程中的错误
 $ check_urdf mrobot_chassis.urdf 
 $ check_urdf <(xacro model.urdf.xacro)
+
+# 查看urdf文件所描述的结构
+$ urdf_to_graphiz [.urdf]
 ```
 
 ## 使用xacro优化URDF
@@ -22,6 +25,43 @@ $ check_urdf <(xacro model.urdf.xacro)
 $ rosrun xacro xacro mrobot.urdf.xacro > mrobot.urdf 
 
 ```
+
+## 写好URDF后如何在rviz里加载进行验证
+
++ 参考http://www.autolabor.com.cn/book/ROSTutorials/di-6-zhang-ji-qi-ren-xi-tong-fang-zhen/62-fang-zhen-urdf-ji-cheng-rviz.html
+
++ 首先写一个view.launch文件
+
+```xml
+<launch>
+    <arg name="model" />
+    <!-- 加载机器人模型参数 此处为想可视化的URDF文件-->
+    <param name="robot_description" command="$(find xacro)/xacro --inorder $(find realsense2_description)/urdf/test_d435_camera_with_iiwa.urdf.xacro" />
+
+    <!-- 设置GUI参数，显示关节控制插件 -->
+    <param name="use_gui" value="true"/>
+
+    <!-- 运行joint_state_publisher节点，发布机器人的关节状态  -->
+    
+    <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" />
+    <!-- 运行robot_state_publisher节点，发布tf  -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+
+    <!-- 运行rviz可视化界面 -->
+    <node pkg="rviz" type="rviz" name="rviz" />
+</launch>
+
+```
+
++ 然后启动该launch文件，在rivz里add Robot Model，并将fixed frame改为base_link，此时可以正常显示
+
++ 再File-Save Config As保存该配置，退出rviz后将最后一行改为
+
+  ```bash
+  <node pkg="rviz" type="rviz" name="rviz" args="-d $(find d435_with_iiwa)/rviz/urdf.rviz"/>
+  ```
+
++ 此时再重新launch，即可直接可视化
 
 # Gazebo
 
