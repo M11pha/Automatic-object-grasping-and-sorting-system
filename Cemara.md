@@ -47,9 +47,8 @@ echo "source ~/camera/devel/setup.bash" >> ~/.bashrc
 # package ws_d435i 
 $ roslaunch camera_calibration camera_calibration.launch
 $ rosrun camera_calibration cameracalibrator.py --size 7x6 --square 0.01 image:=/camera/rgb/image_raw camera:=/camera/rgb # 新建终端并不要source
-
-<node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model"
-        args="-z 1.0 -unpause -urdf -model robot -param robot_description" respawn="false" output="screen" />
+$ rosrun camera_calibration camera_calibration 
+# 结果在/tmp 文件夹下
 ```
 
 ## Test Camera
